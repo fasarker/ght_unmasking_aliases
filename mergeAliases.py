@@ -28,7 +28,7 @@ THR_MAX = 10
 
 unmask = {}
 
-dataPath = os.path.abspath('../../data/2014-01')
+dataPath = os.path.abspath('../data')
 
 w_log = UnicodeWriter(open(os.path.join(dataPath, 'idm', 'idm_log.csv'), 'wb'))
 writer = UnicodeWriter(open(os.path.join(dataPath, 'idm', 'idm_map.csv'), 'wb'))
@@ -41,7 +41,7 @@ curidx = step
 aliases = {}
 
 #    reader = UnicodeReader(open(os.path.join(dataPath, 'users_clean_emails_sample.csv'), 'rb'))
-reader = UnicodeReader(open(os.path.join(dataPath, 'clean', 'users_clean_emails.csv'), 'rb'))
+reader = UnicodeReader(open(os.path.join(dataPath, 'active_prolific_users.csv'), 'rb'))
 _header = reader.next()
 
 # Helper structures
@@ -73,9 +73,9 @@ for row in reader:
     uid = row[0]
     login = row[1].strip()
     name = row[2]    
-    user_type = row[6].strip()
-    location = row[3]
-    email = row[4]
+    user_type = row[7].strip()
+    location = row[4]
+    email = row[5]
     
     unmask[uid] = uid
 
